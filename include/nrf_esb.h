@@ -280,6 +280,18 @@ void nrf_esb_disable(void);
  */
 bool nrf_esb_is_idle(void);
 
+/** @brief Check if the Enhanced ShockBurst module is in rx mode.
+ *
+ *  @return True if the module is in rx mode, false otherwise.
+ */
+bool nrf_esb_is_rx(void);
+
+/** @brief Check if the Enhanced ShockBurst module is in tx mode.
+ *
+ *  @return True if the module is in tx mode, false otherwise.
+ */
+bool nrf_esb_is_tx(void);
+
 /** @brief Write a payload for transmission or acknowledgement.
  *
  *  This function writes a payload that is added to the queue. When the module

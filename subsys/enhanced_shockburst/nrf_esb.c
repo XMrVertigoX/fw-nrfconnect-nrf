@@ -1140,6 +1140,19 @@ bool nrf_esb_is_idle(void)
 	return (esb_state == ESB_STATE_IDLE);
 }
 
+bool nrf_esb_is_rx(void)
+{
+	return (esb_state == ESB_STATE_PRX ||
+		esb_state == ESB_STATE_PRX_SEND_ACK);
+}
+
+bool nrf_esb_is_tx(void)
+{
+	return (esb_state == ESB_STATE_PTX_TX ||
+		esb_state == ESB_STATE_PTX_RX_ACK ||
+		esb_state == ESB_STATE_PTX_TX_ACK);
+}
+
 int nrf_esb_write_payload(const struct nrf_esb_payload *payload)
 {
 	if (!esb_initialized) {
